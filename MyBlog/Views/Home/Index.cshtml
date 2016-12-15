@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model List<MyBlog.Models.Post>
+
+<div>
+    
+    <img src="/Wine_barrels.jpg" width="1130" height="250"/>
+    
+</div>
+
+
+
+<section class="row">
+    
+
+
+
+    <article class="wines col-md-6">
+        <h1 class="title">Защо да пием по чаша вино всеки ден?</h1>
+        <h2>Изкуството да се пие вино</h2> 
+        <div>
+            <p>От незапомнени времена виното е символ на изтънчен вкус и изискани маниери, на благородство, 
+            стил и висока класа.Изборът на вино зависи от храната, която консумирате. Основното правило е, 
+            че червеното месо изисква червено вино, рибата и птичето месо - бяло, а белите меса и вегетарианските 
+            ястия вървят с розе. Но неизменното правило е, че виното се подбира спрямо храната, а не обратното.
+             Когато сте в изискан ресторант, първо поръчайте ястия от менюто, а след това изберете виното.</p>
+
+        </div>
+        <div class="title"><i>Публикувано от Iglika Slaveva на 15-12-2016</i></div>
+   
+    </article>
+
+
+
+    
+</section>
+
+<section class="row">
+
+    @foreach (var post in Model)
+    {
+        <article class="wines col-md-6">
+            <h2 class="title">@post.Title</h2>
+            @if (post.Author != null)
+            { 
+            <div class="about"><i>Публикувано от @post.Author.FullName (@post.Author.UserName)
+                 на @post.Date</i></div>
+            }
+            <div class="body">
+                @Html.Raw(post.Body)
+            </div>
+        </article>
+    }
+</section>

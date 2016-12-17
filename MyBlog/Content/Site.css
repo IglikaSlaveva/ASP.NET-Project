@@ -29,7 +29,7 @@ textarea {
 }
 
 .wines>h1,.wines>h2, .wines>div {
-    background:#000000;
+    
     margin:0;
     padding:10px;
     
@@ -40,7 +40,7 @@ textarea {
 }
 
 .post>h1,.post>h2, .post>div {
-    background:#eae3de;
+    
     margin:0;
     padding:10px;
     
